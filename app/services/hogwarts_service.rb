@@ -3,12 +3,12 @@ class HogwartsService
   def get_results(selected_house)
     house_id = get_house_id(selected_house)
     # binding.pry
-    conn = Faraday.new("https://hogwarts-as-a-service.herokuapp.com/api/v1/house/#{house_id}") do |f|
-      f.headers['x_api_key'] = ENV['HaaS_key']
-      f.adapter Faraday.default_adapter
-    end
+    # conn = Faraday.new("https://hogwarts-as-a-service.herokuapp.com/api/v1/house/#{house_id}") do |f|
+    #   f.headers['x_api_key'] = ENV['HaaS_key']
+    #   f.adapter Faraday.default_adapter
+    # end
     # binding.pry
-    response = conn.get
+    response = conn.get("/api/v1/house/#{house_id}")
     results = JSON.parse(response.body, symbolize_headers: true)
 # binding.pry
     results
