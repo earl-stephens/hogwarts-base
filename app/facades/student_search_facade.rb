@@ -13,8 +13,10 @@ class StudentSearchFacade
     # results = JSON.parse(response.body, symbolize_headers: true)
     # binding.pry
     results = service_request(@house)
-    student_results = results["data"].first["attributes"]["students"]
-    student_results.count
+    # binding.pry
+    # student_results = results["data"].first["attributes"]["students"]
+    # student_results.count
+    results.count
   end
 
   def students
@@ -25,8 +27,8 @@ class StudentSearchFacade
     # results = JSON.parse(response.body, symbolize_headers: true)
     # binding.pry
     results = service_request(@house)
-    student_results = results["data"].first["attributes"]["students"]
-    student_list = student_results.map do |result|
+    # student_results = results["data"].first["attributes"]["students"]
+    student_list = results.map do |result|
       # binding.pry
       Student.new(result)
     end
