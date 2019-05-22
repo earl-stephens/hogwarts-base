@@ -50,7 +50,7 @@ describe 'can get a list of students' do
       expect(page).to have_css('.id')
       expect(page).to have_css('.name')
     end
-    # save_and_open_page
+    save_and_open_page
     # And I should see a name and id for each student.
   end
 
