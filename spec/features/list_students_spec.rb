@@ -20,7 +20,6 @@ describe 'can get a list of students' do
     expect(current_path).to eq('/search')
     expect(current_url).to include('house=Slytherin')
     # And I should see a message "22 Students"
-    # save_and_open_page
     expect(page).to have_content('22 Students')
     expect(page).to have_css('.members', count: 22)
     # And I should see a list of the 22 members of Slytherin
@@ -28,6 +27,7 @@ describe 'can get a list of students' do
       expect(page).to have_css('.id')
       expect(page).to have_css('.name')
     end
+    # save_and_open_page
     # And I should see a name and id for each student.
   end
 end
